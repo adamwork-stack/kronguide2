@@ -37,86 +37,13 @@
 
       <div class="diagram__inner">
         <section class="col col--dev" aria-label="Developers">
-          <div class="dev-stack">
-            <div class="box box--dev">Developer1</div>
-            <div class="box box--dev">Developer2</div>
-            <div class="box box--dev">Developer3</div>
-            <div class="box box--dev">Developer4</div>
-            <div class="box box--dev">Developer</div>
-            <div class="box box--dev">Developer</div>
-            <div class="box box--dev">Developer</div>
-            <div class="box box--dev">Developer</div>
-            <div class="box box--dev">Developer(n-1)</div>
-            <div class="box box--dev">Developer(n)</div>
-          </div>
+          <div class="dev-stack" id="devStack"></div>
         </section>
 
         <div class="diagram__cluster">
-          <div class="bridge bridge--to-teams" aria-hidden="true">
-            <span class="block-arrow">➡</span>
-            <span class="block-arrow">➡</span>
-            <span class="block-arrow">➡</span>
-            <span class="block-arrow">➡</span>
-          </div>
+          <div class="bridge bridge--to-teams" id="bridgeArrows" aria-hidden="true"></div>
 
-          <section class="col col--teams" aria-label="Project managers and US representatives">
-            <div class="team-row">
-              <div class="pair">
-                <div class="pair__cell">
-                  <div class="callout">
-                    <span class="callout__arrow" aria-hidden="true"></span>
-                    <span class="callout__label">Me</span>
-                  </div>
-                  <div class="box box--pm box--highlight">Project Manager1 (HR1)</div>
-                </div>
-                <span class="plus" aria-hidden="true">+</span>
-                <div class="pair__cell">
-                  <div class="callout">
-                    <span class="callout__arrow" aria-hidden="true"></span>
-                    <span class="callout__label">You</span>
-                  </div>
-                  <div class="box box--us box--highlight">US representative1 (Fractional PM1)</div>
-                </div>
-              </div>
-              <span class="block-arrow block-arrow--out">➡</span>
-            </div>
-            <div class="team-row">
-              <div class="pair">
-                <div class="pair__cell">
-                  <div class="box box--pm">Project Manager2 (HR2)</div>
-                </div>
-                <span class="plus" aria-hidden="true">+</span>
-                <div class="pair__cell">
-                  <div class="box box--us">US representative2 (Fractional PM2)</div>
-                </div>
-              </div>
-              <span class="block-arrow block-arrow--out">➡</span>
-            </div>
-            <div class="team-row">
-              <div class="pair">
-                <div class="pair__cell">
-                  <div class="box box--pm">Project Manager3 (HR3)</div>
-                </div>
-                <span class="plus" aria-hidden="true">+</span>
-                <div class="pair__cell">
-                  <div class="box box--us">US representative3 (Fractional PM3)</div>
-                </div>
-              </div>
-              <span class="block-arrow block-arrow--out">➡</span>
-            </div>
-            <div class="team-row">
-              <div class="pair">
-                <div class="pair__cell">
-                  <div class="box box--pm">Project Manager4 (HR4)</div>
-                </div>
-                <span class="plus" aria-hidden="true">+</span>
-                <div class="pair__cell">
-                  <div class="box box--us">US representative4 (Fractional PM4)</div>
-                </div>
-              </div>
-              <span class="block-arrow block-arrow--out">➡</span>
-            </div>
-          </section>
+          <section class="col col--teams" id="teamsCol" aria-label="Project managers and US representatives"></section>
 
           <section class="col col--platform" aria-label="Platform">
             <div class="box box--upwork">UPWORK</div>
