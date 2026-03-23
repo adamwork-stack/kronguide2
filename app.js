@@ -164,8 +164,8 @@
       y: dev.bottom - rect.top,
     };
 
-    /* Symmetric “bracket” arcs: Upwork → arch above/below → Developers (matches typical flowchart screenshots). */
-    const arch = Math.max(36, Math.min(100, h * 0.28));
+    /* Bracket arcs — keep shallow so paths stay inside the viewport (avoid vertical overflow). */
+    const arch = Math.max(18, Math.min(52, h * 0.14));
     const topPeakY = Math.min(upTop.y, devTop.y) - arch;
     const bottomPeakY = Math.max(upBottom.y, devBottom.y) + arch;
 
