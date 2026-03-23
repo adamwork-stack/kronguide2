@@ -12,13 +12,7 @@
   let lastRowCount = 0;
 
   function computeRowCount() {
-    const vh = window.innerHeight;
-    const vw = window.innerWidth;
-    const headerReserve = vw <= 900 ? 100 : 72;
-    const usable = Math.max(280, vh - headerReserve);
-    const perRowBudget = vw <= 900 ? 34 : 26;
-    const n = Math.floor(usable / perRowBudget);
-    return Math.min(40, Math.max(14, n));
+    return window.innerWidth <= 640 ? 6 : 8;
   }
 
   function devLabel(i, n) {
@@ -144,10 +138,6 @@
     const innerRect = inner.getBoundingClientRect();
     if (rect.width < 40 || rect.height < 40) return;
 
-    const pad = 14;
-    const x0 = innerRect.left - rect.left;
-    const y0 = innerRect.top - rect.top;
-    const w = innerRect.width;
     const h = innerRect.height;
 
     const upworkEl = diagram.querySelector(".box--upwork");
@@ -174,20 +164,19 @@
       y: dev.bottom - rect.top,
     };
 
-    const lift = Math.min(48, h * 0.12);
-    const spread = Math.max(80, w * 0.35);
-
-    const topY = y0 - pad;
-    const bottomY = y0 + h + pad;
+    /* Symmetric “bracket” arcs: Upwork → arch above/below → Developers (matches typical flowchart screenshots). */
+    const arch = Math.max(36, Math.min(100, h * 0.28));
+    const topPeakY = Math.min(upTop.y, devTop.y) - arch;
+    const bottomPeakY = Math.max(upBottom.y, devBottom.y) + arch;
 
     const dTop = [
       `M ${upTop.x} ${upTop.y}`,
-      `C ${upTop.x + spread} ${upTop.y - lift}, ${devTop.x + spread} ${topY}, ${devTop.x} ${devTop.y}`,
+      `C ${upTop.x} ${topPeakY}, ${devTop.x} ${topPeakY}, ${devTop.x} ${devTop.y}`,
     ].join(" ");
 
     const dBottom = [
       `M ${upBottom.x} ${upBottom.y}`,
-      `C ${upBottom.x + spread} ${upBottom.y + lift}, ${devBottom.x + spread} ${bottomY}, ${devBottom.x} ${devBottom.y}`,
+      `C ${upBottom.x} ${bottomPeakY}, ${devBottom.x} ${bottomPeakY}, ${devBottom.x} ${devBottom.y}`,
     ].join(" ");
 
     topPath.setAttribute("d", dTop);
