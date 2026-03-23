@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team → Upwork flow</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <h1 class="page-title">Developer network → management pairs → platform</h1>
+
+    <div class="diagram" id="diagram">
+      <svg class="feedback-loops" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead-loop" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#8e44ad" />
+          </marker>
+        </defs>
+        <path
+          class="loop loop--top"
+          d="M 0 0"
+          fill="none"
+          stroke="#8e44ad"
+          stroke-width="2.5"
+          marker-end="url(#arrowhead-loop)"
+        />
+        <path
+          class="loop loop--bottom"
+          d="M 0 0"
+          fill="none"
+          stroke="#8e44ad"
+          stroke-width="2.5"
+          marker-end="url(#arrowhead-loop)"
+        />
+      </svg>
+
+      <div class="diagram__inner">
+        <section class="col col--dev" aria-label="Developers">
+          <div class="dev-stack">
+            <div class="box box--dev">Developer1</div>
+            <div class="box box--dev">Developer2</div>
+            <div class="box box--dev">Developer3</div>
+            <div class="box box--dev">Developer4</div>
+            <div class="box box--dev">Developer</div>
+            <div class="box box--dev">Developer</div>
+            <div class="box box--dev">Developer</div>
+            <div class="box box--dev">Developer</div>
+            <div class="box box--dev">Developer(n-1)</div>
+            <div class="box box--dev">Developer(n)</div>
+          </div>
+        </section>
+
+        <div class="diagram__cluster">
+          <div class="bridge bridge--to-teams" aria-hidden="true">
+            <span class="block-arrow">➡</span>
+            <span class="block-arrow">➡</span>
+            <span class="block-arrow">➡</span>
+            <span class="block-arrow">➡</span>
+          </div>
+
+          <section class="col col--teams" aria-label="Project managers and US representatives">
+            <div class="team-row">
+              <div class="pair">
+                <div class="pair__cell">
+                  <div class="callout">
+                    <span class="callout__arrow" aria-hidden="true"></span>
+                    <span class="callout__label">Me</span>
+                  </div>
+                  <div class="box box--pm box--highlight">Project Manager1 (HR1)</div>
+                </div>
+                <span class="plus" aria-hidden="true">+</span>
+                <div class="pair__cell">
+                  <div class="callout">
+                    <span class="callout__arrow" aria-hidden="true"></span>
+                    <span class="callout__label">You</span>
+                  </div>
+                  <div class="box box--us box--highlight">US representative1 (Fractional PM1)</div>
+                </div>
+              </div>
+              <span class="block-arrow block-arrow--out">➡</span>
+            </div>
+            <div class="team-row">
+              <div class="pair">
+                <div class="pair__cell">
+                  <div class="box box--pm">Project Manager2 (HR2)</div>
+                </div>
+                <span class="plus" aria-hidden="true">+</span>
+                <div class="pair__cell">
+                  <div class="box box--us">US representative2 (Fractional PM2)</div>
+                </div>
+              </div>
+              <span class="block-arrow block-arrow--out">➡</span>
+            </div>
+            <div class="team-row">
+              <div class="pair">
+                <div class="pair__cell">
+                  <div class="box box--pm">Project Manager3 (HR3)</div>
+                </div>
+                <span class="plus" aria-hidden="true">+</span>
+                <div class="pair__cell">
+                  <div class="box box--us">US representative3 (Fractional PM3)</div>
+                </div>
+              </div>
+              <span class="block-arrow block-arrow--out">➡</span>
+            </div>
+            <div class="team-row">
+              <div class="pair">
+                <div class="pair__cell">
+                  <div class="box box--pm">Project Manager4 (HR4)</div>
+                </div>
+                <span class="plus" aria-hidden="true">+</span>
+                <div class="pair__cell">
+                  <div class="box box--us">US representative4 (Fractional PM4)</div>
+                </div>
+              </div>
+              <span class="block-arrow block-arrow--out">➡</span>
+            </div>
+          </section>
+
+          <section class="col col--platform" aria-label="Platform">
+            <div class="box box--upwork">UPWORK</div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
